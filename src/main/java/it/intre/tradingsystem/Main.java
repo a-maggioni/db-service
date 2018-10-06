@@ -2,7 +2,7 @@ package it.intre.tradingsystem;
 
 import it.intre.tradingsystem.common.Constants;
 import it.intre.tradingsystem.elaboration.ThreadConsumerKafka;
-import it.intre.tradingsystem.model.Order;
+import it.intre.tradingsystem.model.Transaction;
 import it.intre.tradingsystem.model.Quote;
 import it.intre.tradingsystem.util.HibernateUtil;
 import org.apache.commons.cli.*;
@@ -19,8 +19,8 @@ public class Main {
         Thread threadQuotes = new Thread(new ThreadConsumerKafka(host, port, Constants.INPUT_TOPIC_QUOTES, Quote.class));
         threadQuotes.start();
 
-        Thread threadOrders = new Thread(new ThreadConsumerKafka(host, port, Constants.INPUT_TOPIC_ORDERS, Order.class));
-        threadOrders.start();
+        Thread threadTransaction = new Thread(new ThreadConsumerKafka(host, port, Constants.INPUT_TOPIC_TRANSACTION, Transaction.class));
+        threadTransaction.start();
     }
 
 

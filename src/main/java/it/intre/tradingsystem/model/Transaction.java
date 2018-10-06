@@ -8,17 +8,17 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name="Order")
-public class Order {
+@Table(name="Transaction")
+public class Transaction {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(nullable=false, unique=true)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
     @Column
-    private OrderType type;
+    @Enumerated(EnumType.STRING)
+    private TransactionType type;
 
     @Column
     private String symbol;
@@ -43,11 +43,11 @@ public class Order {
         this.id = id;
     }
 
-    public OrderType getType() {
+    public TransactionType getType() {
         return type;
     }
 
-    public void setType(OrderType type) {
+    public void setType(TransactionType type) {
         this.type = type;
     }
 
