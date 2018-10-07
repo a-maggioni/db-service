@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "Order")
+@Table(name = "`Order`")
 public class Order {
 
     @Id
