@@ -1,6 +1,6 @@
 package it.intre.tradingsystem.model;
 
-public enum TransactionType {
+public enum OrderType {
     BUY,
     SELL
 }

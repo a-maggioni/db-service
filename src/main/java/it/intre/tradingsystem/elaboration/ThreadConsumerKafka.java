@@ -30,13 +30,13 @@ public class ThreadConsumerKafka implements Runnable {
 
     private Consumer createConsumer(String host, String port, String NameTopic, Class typeClass) {
         KafkaConfiguration inputConfiguration = new KafkaConfiguration(host, port, Constants.GROUP_ID, Constants.CLIENT_ID, NameTopic);
-        return  new KafkaConsumer<>(inputConfiguration, String.class, typeClass);
+        return new KafkaConsumer<>(inputConfiguration, String.class, typeClass);
     }
 
     @Override
     public void run() {
         Consumer consumer = createConsumer(this.host, this.port, this.nameTopic, this.typeClass);
-        Session session =  HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
 
         while (true) {
             List<Record> recordsList = consumer.receive();

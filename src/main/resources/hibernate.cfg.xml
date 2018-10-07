@@ -20,7 +20,7 @@
 
         <!-- Names the mapping entity class -->
         <mapping class="it.intre.tradingsystem.model.Quote"/>
-        <mapping class="it.intre.tradingsystem.model.Transaction"/>
+        <mapping class="it.intre.tradingsystem.model.Order"/>
 
     </session-factory>
 

@@ -8,17 +8,17 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name="Transaction")
-public class Transaction {
+@Table(name = "Order")
+public class Order {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(nullable=false, unique=true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false, unique = true)
     private Long id;
 
     @Column
     @Enumerated(EnumType.STRING)
-    private TransactionType type;
+    private OrderType type;
 
     @Column
     private String symbol;
@@ -33,6 +33,9 @@ public class Transaction {
     private BigDecimal amount;
 
     @Column
+    private BigDecimal profitLoss;
+
+    @Column
     private Long timestamp;
 
     public Long getId() {
@@ -43,11 +46,11 @@ public class Transaction {
         this.id = id;
     }
 
-    public TransactionType getType() {
+    public OrderType getType() {
         return type;
     }
 
-    public void setType(TransactionType type) {
+    public void setType(OrderType type) {
         this.type = type;
     }
 
@@ -81,6 +84,14 @@ public class Transaction {
 
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
+    }
+
+    public BigDecimal getProfitLoss() {
+        return profitLoss;
+    }
+
+    public void setProfitLoss(BigDecimal profitLoss) {
+        this.profitLoss = profitLoss;
     }
 
     public Long getTimestamp() {
