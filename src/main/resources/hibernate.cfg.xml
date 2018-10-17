@@ -16,6 +16,7 @@
         <property name="hbm2ddl.auto">create</property>
 
         <!-- Names the mapping entity class -->
+        <mapping class="it.intre.tradingsystem.model.Bar"/>
         <mapping class="it.intre.tradingsystem.model.Quote"/>
         <mapping class="it.intre.tradingsystem.model.Order"/>
 
